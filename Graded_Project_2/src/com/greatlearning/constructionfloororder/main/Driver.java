@@ -21,7 +21,7 @@ public class Driver {
 		ConstructionFloorLogic cFLogic = new ConstructionFloorLogic();
 		Scanner scan = new Scanner(System.in);
 		Queue<Integer> queue1 = new LinkedList<Integer>();
-		System.out.println("Enter the total no of floors in the building:");
+		System.out.println("Enter the total number of floors in the building:");
 		int floors = scan.nextInt();
 		int element;
 		System.out.println("--------------------------------------------");
@@ -31,7 +31,7 @@ public class Driver {
 			queue1.add(element);
 		}
 		System.out.println("--------------------------------------------");
-		System.out.println("The order of construction is as follows:");
+		System.out.println("\nThe order of construction is as follows:\n");
 		cFLogic.printOrder(queue1, floors);
 		scan.close();
 	}

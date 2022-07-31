@@ -12,6 +12,7 @@ import java.util.Stack;
  */
 public class ConstructionFloorLogic {
 	Stack<Integer> floorStack = new Stack<>();
+	Stack<Integer> temp = new Stack<>();
 	
 	public void printOrder(Queue<Integer> queue1, int count) {
 		int floors=count;
@@ -31,8 +32,13 @@ public class ConstructionFloorLogic {
 				count--;
 			}
 		}
-		else
+		else {
+			while((!floorStack.isEmpty()) && (floorStack.peek()>queue1.peek()))
+				temp.push(floorStack.pop());
 			floorStack.push(queue1.poll());
+			while(!temp.isEmpty())
+				floorStack.push(temp.pop());
+		}
 		System.out.println();
 		return count;
 	}
